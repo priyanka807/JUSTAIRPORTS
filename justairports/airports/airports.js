@@ -1,0 +1,97 @@
+
+
+// <!-- JAVASCRIPT LOGIC FOR NAVBAR SECTION -->
+
+
+let selected 
+function  activeClass(targetElement){
+ 
+  if(selected){
+      selected.classList.remove('high')
+    }
+  
+ 
+    selected = targetElement
+   
+
+    selected.classList.add('high')
+  
+}
+
+
+document.getElementById('navbarItems').addEventListener("click",function(event){
+  const targetElement = event.target
+     activeClass(targetElement)
+
+})
+
+
+
+
+
+
+menu_brand.addEventListener('click', function (event) {
+
+  menu_brand.style.color = '#fff';
+});
+
+
+menu_item.addEventListener('click',function(event){
+ 
+borderWhite.classList.toggle('border_white')
+
+})
+
+
+document.querySelectorAll('.document-item').forEach((item)=>{
+item.addEventListener('click',(event)=>{
+event.preventDefault();
+event.stopPropagation()
+})
+})
+
+// <!-- JAVASCRIPT LOGIC FOR NAVBAR SECTION -->
+
+
+/* login javascript  start */
+
+
+
+login_form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target)
+    const formObject = Object.fromEntries(formData.entries())
+    console.log( formObject  ,'formObject')
+    localStorage.setItem("LOGIN_DATA",JSON.stringify(formObject))
+   const data =  JSON.parse(localStorage.getItem("LOGIN_DATA"))
+
+   const redirects = [
+    { path: '/heathrowAirport', url: './heathrowAirport.html' },
+    { path: '/getwickAirport', url: './getwickAirport.html' },
+    { path: '/lutonAirport', url: './lutonAirport.html' },
+    { path: '/cityAirport', url: './cityAirport.html' },
+    { path: '/southendAirport', url: './southendAirport.html' },
+    { path: '/stanstedAirport', url: './stanstedAirport.html' },
+
+];
+
+ const matchlocation  = redirects.find((redirects)=>location.pathname.includes(redirects.path))
+ console.log(matchlocation  ,'matchlocation  ')
+ 
+if(matchlocation){
+    window.location = matchlocation.url
+}
+event.target.reset()
+});
+
+
+      /* login javascript  end */
+
+
+
+
+
+
+
+
+
