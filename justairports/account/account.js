@@ -68,7 +68,7 @@ login_form.addEventListener('submit', function(event) {
     localStorage.setItem("LOGIN_DATA",JSON.stringify(formObject))
    const data =  JSON.parse(localStorage.getItem("LOGIN_DATA"))
  
-   window.location  = "./about.html"
+   window.location  = "./account.html"
 
 });
 

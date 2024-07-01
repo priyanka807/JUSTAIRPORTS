@@ -1,20 +1,59 @@
 
-let selected
-function targetNavbarItems(target){
-if(selected){
-    console.log('it will run in the first time')
-    selected.classList.remove('high')
-}
-selected = target
-selected.classList.add('high')
+// <!-- JAVASCRIPT LOGIC FOR NAVBAR SECTION -->
 
 
+let selected 
+function  activeClass(targetElement){
+ 
+  if(selected){
+      selected.classList.remove('high')
+    }
+  
+ 
+    selected = targetElement
+   
+
+    selected.classList.add('high')
+  
 }
-const navbarItems = document.getElementById('navbarItems')
-navbarItems.addEventListener('click',(event)=>{
-event.preventDefault()
-targetNavbarItems(event.target)
+
+
+document.getElementById('navbarItems').addEventListener("click",function(event){
+  const targetElement = event.target
+     activeClass(targetElement)
+
 })
+
+
+
+
+
+
+menu_brand.addEventListener('click', function (event) {
+
+  menu_brand.style.color = '#fff';
+});
+
+
+menu_item.addEventListener('click',function(event){
+ 
+borderWhite.classList.toggle('border_white')
+
+})
+
+
+document.querySelectorAll('.document-item').forEach((item)=>{
+item.addEventListener('click',(event)=>{
+event.preventDefault();
+event.stopPropagation()
+})
+})
+
+// <!-- JAVASCRIPT LOGIC FOR NAVBAR SECTION -->
+
+
+/* login javascript  start */
+
 
 const login_form = document.getElementById('login_form');
 const loginsubmit = document.getElementById('loginsubmit');
@@ -28,7 +67,8 @@ login_form.addEventListener('submit', function(event) {
     console.log( formObject  ,'formObject')
     localStorage.setItem("LOGIN_DATA",JSON.stringify(formObject))
    const data =  JSON.parse(localStorage.getItem("LOGIN_DATA"))
- 
+  window.location = "./cookies.html"
+
     // const phoneValue = Phonenumber.value;
     // const passwordValue = password.value;
     //  const data = {phoneValue:phoneValue,passwordValue:`${passwordValue}`}
@@ -37,4 +77,15 @@ login_form.addEventListener('submit', function(event) {
     // console.log('Password:1111', passwordValue);
     // Add your login logic here
 });
+
+
+      /* login javascript  end */
+
+
+
+
+
+
+
+
 

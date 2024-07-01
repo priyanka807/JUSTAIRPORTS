@@ -64,7 +64,7 @@ event.stopPropagation()
 
 
 // <!-- JAVASCRIPT LOGIC FOR NAVBAR SECTION -->
-document.getElementById('apply_driver_form'),addEventListener('submit',(event)=>{
+document.getElementById('apply_driver_form').addEventListener('submit',(event)=>{
     event.preventDefault();
    let formData = new FormData(event.target)
    let formObject = Object.fromEntries(formData.entries())

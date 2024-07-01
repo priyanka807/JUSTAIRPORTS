@@ -55,10 +55,6 @@ event.stopPropagation()
 /* login javascript  start */
 
 
-const login_form = document.getElementById('login_form');
-const loginsubmit = document.getElementById('loginsubmit');
-const Phonenumber = document.getElementById('Phonenumber');
-const password = document.getElementById('password');
 
 login_form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -67,16 +63,9 @@ login_form.addEventListener('submit', function(event) {
     console.log( formObject  ,'formObject')
     localStorage.setItem("LOGIN_DATA",JSON.stringify(formObject))
    const data =  JSON.parse(localStorage.getItem("LOGIN_DATA"))
+   window.location = "./privacypolicy"
 
-   window.location = "./about.html"
- 
-    // const phoneValue = Phonenumber.value;
-    // const passwordValue = password.value;
-    //  const data = {phoneValue:phoneValue,passwordValue:`${passwordValue}`}
-    //  console.log(data,'data')
-    // console.log('Phone Number111:', phoneValue);
-    // console.log('Password:1111', passwordValue);
-    // Add your login logic here
+  
 });
 
 
